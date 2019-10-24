@@ -1,3 +1,7 @@
+'''
+    Author : thekushalghosh
+    Team   : CodeDiggers
+'''
 import os
 import pygame
 import pygame as pg
