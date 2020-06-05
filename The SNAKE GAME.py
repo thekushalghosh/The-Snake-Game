@@ -1,7 +1,11 @@
-'''
+"""
     Author : thekushalghosh
     Team   : CodeDiggers
-'''
+ 
+    I prefer Python language over the C++ language :p :D
+        
+    Visit my website : thekushalghosh.github.io
+"""
 import os
 import pygame
 import pygame as pg
@@ -11,6 +15,8 @@ import webbrowser
 from pygame.locals import *
  
 pygame.init()
+
+
 display_width = 800
 display_height = 600
 
@@ -62,6 +68,7 @@ global clkk
 clk = 0
 
 clkk = 0
+
 
 hh = 0
 
@@ -173,25 +180,30 @@ def button(msg,x,y,w,h,ic,ac,r,action):
 def blocks(blockx, blocky, blockw, blockh, color):
     pygame.draw.rect(gameDisplay, color, [blockx, blocky, blockw, blockh])
 
+def urlwebsite():
+    new = 2
+    url = "https://thekushalghosh.github.io"
+    webbrowser.open(url,new = new)
+    
 def urlfb():
     new = 2
-    url = "www.facebook.com/thekushalghosh"
-    webbrowser.open(url,new=new)
+    url = "https://facebook.com/thekushalghosh"
+    webbrowser.open(url,new = new)
 
 def urlin():
     new = 2
-    url = "www.instagram.com/thekushalghosh"
-    webbrowser.open(url,new=new)
+    url = "https://instagram.com/thekushalghosh"
+    webbrowser.open(url,new = new)
 
 def urltw():
     new = 2
-    url = "www.twitter.com/thekushalghosh"
-    webbrowser.open(url,new=new)
+    url = "https://twitter.com/thekushalghosh"
+    webbrowser.open(url,new = new)
 
 def urlqu():
     new = 2
-    url = "www.quora.com/profile/Kushal-Ghosh-24"
-    webbrowser.open(url,new=new)
+    url = "https://quora.com/profile/Kushal-Ghosh-24"
+    webbrowser.open(url,new = new)
 
 def misc():
     global ab
@@ -364,6 +376,7 @@ def game_intro():
         gameDisplay.blit(TextSurf1, TextRect1)
         gameDisplay.blit(TextSurf2, TextRect2)
 
+        button("Website",450,14,125,35,(0,220,220),(0,255,255),7,urlwebsite)
         button("f",593,14,35,35,(59,89,239),(68,143,255),7,urlfb)
         button("[o]",648,14,35,35,(255,20,149),(95,95,95),7,urlin)
         button("t",703,14,35,35,(29,161,242),(0,0,255),7,urltw)
@@ -643,6 +656,10 @@ def game_play():
 
         
  
+
+
+
+
         for i in range(0, len(xs)):
             gameDisplay.blit(img, (xs[i], ys[i]))
 
@@ -652,4 +669,3 @@ def game_play():
         clock.tick(15)
 
 intromusic()
-
