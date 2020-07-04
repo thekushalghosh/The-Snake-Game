@@ -33,17 +33,11 @@ bright_red = (255,0,0)
 bright_green = (0,255,0)
 
 '''global bgcol
-
 global bkcol
-
 global ab
-
 global aa
-
 global spd
-
 global scrr
-
 global eatimg'''
 
 eatimg = pygame.image.load('appl.png')
@@ -345,7 +339,7 @@ def crash():
             
     
 
-        button("Try Again",120,400,120,50,green,bright_green,9,game_play)
+        button("Try Again",120,400,120,50,green,bright_green,9,countdown)
         button("Main Menu",350,400,150,50,(112,128,144),(192,192,192),9,intromusic)
         button("Exit",600,400,100,50,red,bright_red,9,quitgame)
 
@@ -538,27 +532,25 @@ def delay():
 
 
 def countdown():
+    pygame.mixer.music.load(ab)
+    pygame.mixer.music.play(-1)
     w = ["3","2","1"]
+    place = [300,400,500]
     gameDisplay.fill(bgcol)
-    for i in w:
-        pygame.time.delay(400)
+    for i in range(len(w)):
         largeText = pygame.font.SysFont("calculator",135)
-        TextSurf, TextRect = text_objects(i, largeText)
-        TextRect.center = ((display_width/2),(display_height/2))
+        TextSurf, TextRect = text_objects(w[i], largeText)
+        TextRect.center = (place[i],(display_height/2))
         gameDisplay.blit(TextSurf, TextRect)
     
-        while True:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    quit()
+        
 
 
-
-            pygame.display.update()
-            clock.tick(15)
-                    
-            game_play()
+        time.sleep(1)
+        pygame.display.update()
+        clock.tick(15)
+    time.sleep(1)     
+    game_play()
 
 
 def game_play():
@@ -573,8 +565,7 @@ def game_play():
 
     global pause
 
-    pygame.mixer.music.load(ab)
-    pygame.mixer.music.play(-1)
+   
     
     img = pygame.Surface((20, 20))
     img.fill(bkcol)
@@ -589,7 +580,6 @@ def game_play():
     blhy = display_height/2
 
     gameExit = False
-
     while not gameExit:
     
         for e in pygame.event.get():
@@ -667,5 +657,6 @@ def game_play():
          
         pygame.display.update()
         clock.tick(15)
+
 
 intromusic()
