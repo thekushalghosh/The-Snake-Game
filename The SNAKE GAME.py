@@ -17,8 +17,7 @@ from pygame.locals import *
 pygame.init()
 
 
-display_width = 800
-display_height = 600
+display_width,display_height = 800,600
 
 black = (0,0,0)
 white = (255,255,255)
@@ -659,4 +658,5 @@ def game_play():
         clock.tick(15)
 
 
+	
 intromusic()
